@@ -1,7 +1,7 @@
 from selenium import webdriver
-import os
 
-print(os.environ['PATH'])
+
+
 
 class Driver:
 
