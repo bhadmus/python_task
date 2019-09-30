@@ -1,9 +1,12 @@
 from selenium import webdriver
+import os
+
+print(os.environ['PATH'])
 
 class Driver:
 
     def __init__(self):
-        self.instance = webdriver.Chrome('/usr/local/bin/chromedriver')
+        self.instance = webdriver.Chrome()
 
     def navigate(self, url):
         if isinstance(url,str):
