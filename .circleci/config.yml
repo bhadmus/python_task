@@ -4,6 +4,7 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.6.4
+      - image: selenium/standalone-chrome:3.141
 
     steps:
       - checkout
@@ -15,7 +16,7 @@ jobs:
             sudo pip install chromedriver
 
       - run:
-          name: Run the API, Mobile and Selenium tests
+          name: Run Selenium test
           command: |
             python -m pytest testcases/test_index.py
 
