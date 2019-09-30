@@ -1,0 +1,23 @@
+version: 2.0
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout
+      - run:
+          name: Install requests
+          command: |
+            sudo pip install -r requirements.txt
+
+      - run:
+          name: Run the API, Mobile and Selenium tests
+          command: |
+            python -m pytest testcases/test_index.py
+
+      - store_artifacts:
+          path: ./screenshots
+          destination: screenshots-file
+      - store_artifacts:
+          path: ./log
+          destination: logs-file
