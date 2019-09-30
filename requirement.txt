@@ -4,4 +4,4 @@ python_dotenv==0.8.2
 six==1.12.0
 pytest-xdist==1.22
 pytest-rerunfailures==4.1
-chromedriver
+
